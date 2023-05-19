@@ -1,0 +1,575 @@
+@font-face {
+  font-family: Ubuntu;
+  src: url("../../Web Dev/Project-2/fonts/Ubuntu-Bold.ttf");
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-image: linear-gradient(to top left, #5b28b3 0%, #1eaf99 100%);
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #ffffff;
+}
+
+/* The Css for the input bar  */
+
+#instruction-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 22px;
+  right: 8rem;
+  height: 101px;
+}
+
+.ins-span {
+  position: relative;
+  top: 2.5rem;
+  left: 12rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.inst-input {
+  height: 6.8rem;
+  width: 19.8rem;
+  position: relative;
+  top: 2.1rem;
+  left: 233px;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 3px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.btn {
+  padding: 0.3rem;
+  position: relative;
+  left: 15.6rem;
+  top: 11.7rem;
+  height: 2.3rem;
+  margin: 0.7rem 0.2rem;
+  background-color: transparent;
+  width: 7rem;
+  color: white;
+  font-size: 1.2rem;
+  border: 3px solid white;
+  border-radius: 15px;
+}
+
+.btn:hover {
+  background-color: white;
+  opacity: 0.7;
+  color: black;
+  /* font-size: 20px; */
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#machinecode-container {
+  position: relative;
+  height: 2rem;
+  width: 20.9rem;
+  position: relative;
+  bottom: 2.6rem;
+  left: 52.2rem;
+  border-radius: 1rem;
+  background-color: white;
+  text-align: center;
+  color: black;
+  box-sizing: border-box;
+  padding-top: 0.6rem;
+  font-weight: bold;
+}
+
+#machine_code {
+  position: absolute;
+  top: -2.1rem;
+  left: 43rem;
+}
+
+#mach-op-container {
+  display: flex;
+  position: relative;
+  right: 7rem;
+}
+
+/* Whole System & CPU architectute */
+
+/* Memory Adresses */
+.prim-headings {
+  display: block;
+  position: relative;
+  left: 3.5rem;
+  top: 1.75rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: system-ui;
+  width: max-content;
+  margin-bottom: 10px;
+}
+
+#op-code {
+  position: absolute;
+  top: -2.1rem;
+  left: 43rem;
+}
+
+#opcode {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 52.5rem;
+  bottom: 0.3rem;
+}
+
+.small-box {
+  background-color: white;
+  height: 2rem;
+  width: 49px;
+  margin: 2px;
+  border-radius: 21px;
+  color: black;
+  box-sizing: border-box;
+  padding-top: 0.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.large-box {
+  background-color: white;
+  height: 2rem;
+  width: 84px;
+  margin: 2px;
+  border-radius: 21px;
+  color: black;
+  box-sizing: border-box;
+  padding-top: 0.3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.op-span {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#code {
+  position: absolute;
+  bottom: 2.3rem;
+  left: 0.9rem;
+}
+
+#d {
+  position: absolute;
+  bottom: 2.3rem;
+  left: 6.8rem;
+}
+
+#w {
+  position: absolute;
+  bottom: 2.3rem;
+  left: 10rem;
+}
+
+#mod {
+  position: absolute;
+  bottom: 2.3rem;
+  left: 12.8rem;
+}
+
+#reg {
+  position: absolute;
+  bottom: 2.3rem;
+  left: 17.3rem;
+}
+
+#r-m {
+  position: absolute;
+  bottom: 2.3rem;
+  left: 27.8rem;
+}
+
+#r-m-block {
+  width: 15rem;
+}
+
+#containers {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 9.5rem;
+}
+
+#memory-container {
+  border: 2px solid white;
+  width: 21rem;
+  left: 2.1rem;
+  position: relative;
+  border-radius: 1.5rem;
+}
+
+#memory {
+  display: flex;
+  flex-direction: row;
+  margin: 21px;
+  position: relative;
+  top: 21px;
+}
+
+.locations {
+  background-color: rgb(207, 204, 204);
+  height: 1.48rem;
+  width: 9rem;
+  margin: 2px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.locNo {
+  background-color: rgb(75, 136, 226);
+  width: 3rem;
+  border: none;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 0.75rem;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 0.3rem;
+}
+
+/* The ALU and Other parts  */
+#alu-img {
+  position: relative;
+  border: 2px solid white;
+  width: 16rem;
+  height: 14rem;
+  left: 14.3rem;
+  display: flex;
+  top: 2.2rem;
+}
+
+#alu {
+  border: 3px solid white;
+  width: 14rem;
+  height: 5.4rem;
+  position: relative;
+  top: 0.65rem;
+  left: 1rem;
+  border-radius: 14px;
+}
+
+#alu-text {
+  display: block;
+  position: relative;
+  top: 1.01rem;
+  left: 4.7rem;
+  font-weight: bold
+}
+
+#alu-display1 {
+  position: relative;
+  top: 1.75rem;
+  left: 1.5rem;
+  width: 11rem;
+  height: 2rem;
+  border: 2px solid white;
+  border-radius: 1rem;
+  background-color: white;
+  text-align: center;
+  color: black;
+  box-sizing: border-box;
+  padding-top: 0.6rem;
+  font-weight: bold;
+}
+
+#alu-display {
+  background-color: white;
+  width: 10rem;
+  height: 42px;
+  position: absolute;
+  top: 16rem;
+  left: 2.2rem;
+  border-radius: 12px;
+  color: black;
+  box-sizing: border-box;
+  padding-top: 0.6rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#pc-container {
+  width: 3rem;
+  height: 1.3rem;
+  left: 1.4rem;
+  background-color: white;
+  position: relative;
+  /* display: flex; */
+  top: 1rem;
+  border-radius: 7PX;
+  color: black;
+  text-align: center;
+  box-sizing: border-box;
+
+}
+
+.reg-texts {
+  display: block;
+  position: relative;
+  top: 0.2rem;
+  left: 2.45rem;
+  font-weight: bold;
+}
+
+.special-reg {
+  border: 3px solid white;
+  width: 6rem;
+  height: 4.1rem;
+  position: relative;
+  top: 10.4rem;
+  right: 0.5rem;
+  border-radius: 14px;
+  margin: 4px;
+}
+
+/* Registers Work */
+#registers-container {
+  position: relative;
+  height: 20rem;
+  left: 10.2rem;
+  border: 2px solid white;
+  padding: 1rem;
+  border-radius: 37px;
+  width: 21rem;
+}
+
+.register-headings {
+  text-align: center;
+  position: relative;
+  top: 1.09rem;
+}
+
+.reg-names {
+  /* padding: 0px 10px; */
+  width: 7rem;
+  position: relative;
+  top: 0.6rem;
+  text-align: center;
+}
+
+#registers {
+  /* background-color: brown; */
+  display: flex;
+  flex-direction: column;
+  float: right;
+  position: relative;
+  right: 3rem;
+  top: 1.5rem;
+}
+
+.regs {
+  background-color: rgb(75, 136, 226);
+  width: 14.5rem;
+  height: 2.6rem;
+  border-radius: 14px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  margin: 2px;
+}
+
+.subreg {
+  background-color: rgb(201, 195, 214);
+  border: 1px solid black;
+  width: 3.1rem;
+  height: 2.5rem;
+  color: black;
+  position: relative;
+  /* top: -2px; */
+  text-align: center;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding-top: 0.6rem;
+  border-radius: 2.1rem;
+  margin: 2px;
+}
+
+#real-alu {
+  width: 16.1rem;
+  height: 80px;
+  border: 2px solid white;
+  position: absolute;
+  top: 32.8rem;
+  left: 35.56rem;
+  z-index: -1;
+}
+
+#real-alu-text {
+  text-align: center;
+  position: relative;
+  display: block;
+  top: 0.4rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: system-ui;
+}
+
+/* ALU Image  */
+/* #alu-img {
+  width: 20px;
+  height: 10px;
+  size-adjust: 10px;
+  margin-left: 275px;
+  margin-top: 100px;
+} */
+
+/* Instruction and machine code Box */
+/* #inst-machine-container {
+  width: 100px;
+  height: 100px;
+  margin-left: 30px;
+  margin-top: 50px;
+  display: flex;
+  /* float: left; */
+/* } */
+
+.active {
+  background-color: rgb(44, 137, 125);
+  border: 2px solid rgb(215, 239, 115);
+}
+
+#out-alu-anim {
+  height: 7px;
+  width: 153px;
+  position: absolute;
+  left: 830px;
+  top: 9rem;
+  background-color: white;
+}
+
+#alu-to-reg {
+  /* transform: rotate(180); */
+  height: 7px;
+  width: 153px;
+  position: absolute;
+  background-color: rgb(128, 123, 123);
+  left: 0rem;
+  top: 0rem;
+  animation: alu-to-reg 2s ease 0s 1 reverse;
+  animation: reg-to-alu 2s ease 0s 1 normal;
+}
+
+#out-alu-anim1 {
+  height: 7px;
+  width: 153px;
+  position: absolute;
+  left: 28.6rem;
+  top: 0rem;
+  background-color: white;
+}
+
+#alu-to-reg1 {
+  height: 7px;
+  width: 153px;
+  position: absolute;
+  background-color: rgb(128, 123, 123);
+  left: 0rem;
+  top: 0rem;
+  animation: alu-to-reg 2s ease 0s 1 reverse;
+  animation: reg-to-alu 2s ease 0s 1 normal;
+}
+
+#out-mem-anim {
+  height: 7px;
+  width: 195px;
+  position: absolute;
+  left: 374px;
+  top: 9rem;
+  background-color: white;
+}
+
+#mem-to-alu {
+  height: 7px;
+  width: 12.2rem;
+  background-color: rgb(128, 123, 123);
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  animation: alu-to-reg 2s ease 0s 1 reverse;
+  animation: reg-to-alu 2s ease 0s 1 normal;
+}
+
+/* TOWARDS THE NEW ALU WALI  */
+#out-mem-anim1 {
+  height: 7px;
+  width: 195px;
+  position: absolute;
+  left: 374px;
+  top: 35rem;
+  background-color: white;
+}
+
+#mem-to-alu1 {
+  height: 7px;
+  width: 12rem;
+  background-color: rgb(128, 123, 123);
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  animation: alu-to-reg 2s ease 0s 1 reverse;
+  animation: reg-to-alu 2s ease 0s 1 normal;
+}
+
+/* ANIMATIONS */
+/* @keyframes alu-to-reg {
+  from {
+    width: 3%;
+    background-color: rgb(128, 123, 123);
+  }
+
+  to {
+    width: 100%;
+    background-color: rgb(128, 123, 123);
+  }
+}
+
+@keyframes reg-to-alu {
+  from {
+    width: 3%;
+    background-color: rgb(128, 123, 123);
+  }
+
+  to {
+    /* position: fixed; */
+/* width: 100%;
+    background-color: rgb(128, 123, 123);
+  }
+} */
+.active1 {
+  background-color: rgb(44, 137, 125);
+  border: 2px solid rgb(215, 239, 115);
+}
+
+.active2 {
+  background-color: rgb(208, 119, 59);
+  border: 2px solid rgb(202, 5, 5);
+}
+
+.data {
+  display: inline-block;
+  /* padding-left: 20px; */
+  position: relative;
+  font-weight: bold;
+  color: black;
+  bottom: 21px;
+  left: 71px;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8086/88 Simulator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="instruction-container">
+      <p class="ins-span">Instruction:</p>
+      <textarea class="inst-input" rows="5" cols="60" placeholder="">
+      </textarea>
+
+      <button class="btn simulator" id="simulator">Simulate</button>
+      <button class="btn next" id="next">>></button>
+    </div>
+    <div id="mach-op-container">
+      <p class="ins-span" id="op-code">Machine Code:-</p>
+      <div id="opcode">
+        <p class="op-span" id="code">Op-Code</p>
+        <div class="large-box code"></div>
+        <p class="op-span" id="d">D</p>
+        <div class="small-box D"></div>
+        <p class="op-span" id="w">W</p>
+        <div class="small-box W"></div>
+        <p class="op-span" id="mod">Mod</p>
+        <div class="small-box Mod"></div>
+        <p class="op-span" id="reg">Reg</p>
+        <div class="large-box Reg"></div>
+        <p class="op-span" id="r-m">R/M</p>
+        <div class="large-box r-m" id="r-m-block"></div>
+      </div>
+    </div>
+    <div id="containers">
+      <div id="memory-container">
+        <h2 class="prim-headings">Memory Locations:</h2>
+        <div id="memory">
+          <div>
+            <div id="loc0" class="locations">
+              <div class="locNo">00000</div>
+              <div class="data data--0">0000</div>
+            </div>
+            <div id="loc1" class="locations">
+              <div class="locNo">00001</div>
+              <div class="data data--1">0000</div>
+            </div>
+            <div id="loc2" class="locations">
+              <div class="locNo">00002</div>
+              <div class="data data--2">0000</div>
+            </div>
+            <div id="loc3" class="locations">
+              <div class="locNo">00003</div>
+              <div class="data data--3">0000</div>
+            </div>
+            <div id="loc4" class="locations">
+              <div class="locNo">00004</div>
+              <div class="data data--4">0000</div>
+            </div>
+            <div id="loc5" class="locations">
+              <div class="locNo">00005</div>
+              <div class="data data--5">0000</div>
+            </div>
+            <div id="loc6" class="locations">
+              <div class="locNo">00006</div>
+              <div class="data data--6">0000</div>
+            </div>
+            <div id="loc7" class="locations">
+              <div class="locNo">00007</div>
+              <div class="data data--7">0000</div>
+            </div>
+          </div>
+          <div>
+            <div id="loc8" class="locations">
+              <div class="locNo">00008</div>
+              <div class="data data--8">0000</div>
+            </div>
+            <div id="loc9" class="locations">
+              <div class="locNo">00009</div>
+              <div class="data data--9">0000</div>
+            </div>
+            <div id="loc10" class="locations">
+              <div class="locNo">0000A</div>
+              <div class="data data--10">0000</div>
+            </div>
+            <div id="loc11" class="locations">
+              <div class="locNo">0000B</div>
+              <div class="data data--11">0000</div>
+            </div>
+            <div id="loc12" class="locations">
+              <div class="locNo">0000C</div>
+              <div class="data data--12">0000</div>
+            </div>
+            <div id="loc13" class="locations">
+              <div class="locNo">0000D</div>
+              <div class="data data--13">0000</div>
+            </div>
+            <div id="loc14" class="locations">
+              <div class="locNo">0000E</div>
+              <div class="data data--14">0000</div>
+            </div>
+            <div id="loc15" class="locations">
+              <div class="locNo">0000F</div>
+              <div class="data data--15">0000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="alu-img" class="img">
+        <div id="alu">
+          <span id="alu-text">Controller</span>
+          <!-- <div class="cont" id="alu-display1"></div> -->
+          <div id="alu-display">--------</div>
+        </div>
+      </div>
+
+      <div id="pc" class="special-reg">
+        <span id="pc-text" class="reg-texts">PC</span>
+        <div id="pc-container"></div>
+      </div>
+      <div id="ip" class="special-reg">
+        <span id="ip-text" class="reg-texts">IR</span>
+      </div>
+
+      <div id="registers-container">
+        <h2 class="register-headings">Registers</h2>
+        <div id="registers">
+          <div class="regs regs--reg">
+            <div class="reg-names">Registers</div>
+            <div class="subreg subreg--H">H</div>
+            <div class="subreg subreg--L">L</div>
+          </div>
+          <div class="regs regs--A">
+            <div class="reg-names">A</div>
+            <div class="subreg subreg--AH">10</div>
+            <div class="subreg subreg--AL">20</div>
+          </div>
+          <div class="regs regs--B">
+            <div class="reg-names">B</div>
+            <div class="subreg subreg--BH">30</div>
+            <div class="subreg subreg--BL">40</div>
+          </div>
+          <div class="regs regs--C">
+            <div class="reg-names">C</div>
+            <div class="subreg subreg--CH">50</div>
+            <div class="subreg subreg--CL">60</div>
+          </div>
+          <div class="regs regs--D">
+            <div class="reg-names">D</div>
+            <div class="subreg subreg--DH">70</div>
+            <div class="subreg subreg--DL">80</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="real-alu">
+      <p id="real-alu-text">ALU</p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
